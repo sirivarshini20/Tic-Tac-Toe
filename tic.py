@@ -1,12 +1,12 @@
 import tkinter as tk
 
 storage = tk.Tk()
-storage.geometry('800x500')
-storage.title("Tic Tac Toe - CopyAssignment")
+storage.geometry('1000x700')
+storage.title("Tic Tac Toe")
 
-tk.Label(storage, text="CopyAssignment", font=('ariel', 45, ), fg='red').pack()
+tk.Label(storage, text="Tic", font=('ariel', 45, ), fg='red').pack()
 tk.Label(storage, text="Tic-Tac-Toe", font=('Ariel', 25)).pack()
-status_label = tk.Label(storage, text="X's turn", font=('Ariel', 15), bg='blue', fg='snow')
+status_label = tk.Label(storage, text="X's turn", font=('Ariel', 20), bg='orange', fg='snow')
 status_label.pack(fill=tk.X)
 def playAgain():
     global currentChar
@@ -16,11 +16,11 @@ def playAgain():
         point.reset()
     status_label.configure(text="X's turn")
     playAgain.pack_forget()
-playAgain = tk.Button(storage, text='Play again', font=('Ariel', 15), fg='red', command=playAgain)
+playAgain = tk.Button(storage, text='Play again', font=('Ariel', 20), fg='green', command=playAgain)
 
 currentChar = "X"
 
-play_area = tk.Frame(storage, width=500, height=300, bg='white')
+play_area = tk.Frame(storage, width=700, height=500, bg='blue')
 xoPointCountr = []
 xPointCountr = []
 oPointCountr = []
@@ -29,7 +29,7 @@ class XOPoint:
         self.x = x
         self.y = y
         self.value = None
-        self.button = tk.Button(play_area, text="", width=10, height=5, command=self.set)
+        self.button = tk.Button(play_area, text="", width=20, height=10, command=self.set)
         self.button.grid(row=x, column=y)
 
     def set(self):
